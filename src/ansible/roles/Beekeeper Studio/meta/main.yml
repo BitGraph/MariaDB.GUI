@@ -1,0 +1,5 @@
+dependencies:
+  - Beekeeper Studio/install
+# Fix vars
+  # - AppImage
+  # - AppImage/extract icon
