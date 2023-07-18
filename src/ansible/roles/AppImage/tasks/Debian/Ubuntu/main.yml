@@ -1,6 +1,6 @@
 - name: AppImage dependencies
   ansible.builtin.apt:
     pkg:
-    - fuse
+    - fuse3
     - libfuse2
   become: true
