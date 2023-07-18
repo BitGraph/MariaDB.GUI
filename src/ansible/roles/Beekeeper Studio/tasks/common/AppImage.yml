@@ -1,0 +1,23 @@
+- debug:
+    msg: "{{mirror_dir}} and {{download_url}}"
+
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "{{mirror_dir}}"
+    state: directory
+    mode: '0755'
+
+- name: Download
+  ansible.builtin.get_url:
+    url: "{{download_url}}"
+    dest: "{{mirror_dir}}/{{file_name}}"
+    mode: '0755'
+
+- name: Launcher - Desktop file
+  ansible.builtin.template:
+    src: beekeeper-studio.desktop.j2
+    dest: "/home/{{ ansible_user }}/.local/share/applications/beekeeper-studio.desktop"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0644'
+  become: true

@@ -1,0 +1,14 @@
+arch: "{{ansible_architecture}}"
+
+download_page: "https://www.beekeeperstudio.io/download/?ext=AppImage&arch={{ 'x86_64' if arch == 'x86_64' }}&type=&edition=ultimate"
+
+download_url: "https://github.com/beekeeper-studio/ultimate-releases/releases/download/v{{version}}/Beekeeper-Studio-{{edition}}-{{version}}.AppImage"
+
+file_name: "Beekeeper-Studio-Ultimate-{{version}}.AppImage"
+
+mirror_dir: "{{ansible_env.HOME}}/.uni/mirror/app"
+
+app_dir: "{{mirror_dir}}"
+
+# install Source
+ubuntu_default: AppImage
