@@ -1,6 +1,7 @@
+app=$1
 
 extract(){
-    ./Beekeeper-Studio-Ultimate-3.9.18.AppImage --appimage-extract
+    ./${app} --appimage-extract
 }
 
 copy(){
@@ -10,3 +11,7 @@ copy(){
 cleanup(){
     rm -r squashfs-root
 }
+
+extract
+copy
+cleanup

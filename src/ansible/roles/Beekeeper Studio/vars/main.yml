@@ -6,6 +6,8 @@ download_url: "https://github.com/beekeeper-studio/ultimate-releases/releases/do
 
 file_name: "Beekeeper-Studio-Ultimate-{{version}}.AppImage"
 
+icon: "beekeeper-studio.png"
+
 mirror_dir: "{{ansible_env.HOME}}/.uni/mirror/app"
 
 app_dir: "{{mirror_dir}}"

@@ -1,9 +1,9 @@
 - debug:
     msg: "{{app_dir}}/{{file_name}}"
 
-# - name: Run script extract-icon.sh
-#   ansible.builtin.script: "extract-icon.sh {{file_name}}"
-#   args:
-#     chdir: "{{app_dir}}"
-#     creates: /the/created/file.txt
-#   become: true
+- name: Run script extract-icon.sh
+  ansible.builtin.script: "extract-icon.sh {{file_name}}"
+  args:
+    chdir: "{{app_dir}}"
+    creates: "/usr/share/icons/hicolor/128x128/apps/{{icon}}"
+  become: true

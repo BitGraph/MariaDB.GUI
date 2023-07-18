@@ -21,3 +21,11 @@
     group: "{{ ansible_user }}"
     mode: '0644'
   become: true
+
+- name: AppImage Dependencies
+  ansible.builtin.include_role:
+    name: AppImage
+
+- name: AppImage Extract Icon
+  ansible.builtin.include_role:
+    name: AppImage/extract icon

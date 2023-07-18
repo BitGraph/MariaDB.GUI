@@ -1,5 +1,1 @@
-- ansible.builtin.include_role:
-    name: AppImage
-  when: ubuntu_default == "AppImage"
-
 - include_tasks: "common/{{ubuntu_default}}.yml"

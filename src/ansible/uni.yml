@@ -1,4 +1,4 @@
-- hosts: localhost #, fedora, ubuntu
+- hosts: localhost
   vars:
     # Host_vars
     ansible_become_password: u
@@ -6,4 +6,5 @@
 
   roles:
   - Beekeeper Studio
-  - AppImage/extract icon
+
+# Do: I may have slight issues with Variables for include_role! Fix!
