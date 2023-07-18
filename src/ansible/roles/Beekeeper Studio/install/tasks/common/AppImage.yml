@@ -13,6 +13,14 @@
     dest: "{{mirror_dir}}/{{file_name}}"
     mode: '0755'
 
+- name: Create a symbolic link
+  ansible.builtin.file:
+    src: "{{mirror_dir}}/{{file_name}}"
+    dest: "{{app_dir}}"
+    owner: "{{ansible_user}}"
+    group: "{{ansible_user}}"
+    state: link
+
 - name: Launcher - Desktop file
   ansible.builtin.template:
     src: beekeeper-studio.desktop.j2

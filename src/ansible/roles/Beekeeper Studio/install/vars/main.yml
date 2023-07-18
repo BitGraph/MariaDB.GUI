@@ -8,9 +8,9 @@ file_name: "Beekeeper-Studio-Ultimate-{{version}}.AppImage"
 
 icon: "beekeeper-studio.png"
 
-mirror_dir: "{{ansible_env.HOME}}/.uni/mirror/app"
+mirror_dir: "{{ansible_env.HOME}}/.uni/stor/mirror"
 
-app_dir: "{{mirror_dir}}"
+app_dir: "{{mirror_dir}}/app"
 
 # install Source
 ubuntu_default: AppImage
