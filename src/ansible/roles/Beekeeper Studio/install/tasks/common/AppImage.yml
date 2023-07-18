@@ -3,9 +3,12 @@
 
 - name: Create a directory if it does not exist
   ansible.builtin.file:
-    path: "{{mirror_dir}}"
+    path: "{{item}}"
     state: directory
     mode: '0755'
+  loop:
+  - "{{app_dir}}"
+  - "{{mirror_dir}}"
 
 - name: Download
   ansible.builtin.get_url:
@@ -16,7 +19,7 @@
 - name: Create a symbolic link
   ansible.builtin.file:
     src: "{{mirror_dir}}/{{file_name}}"
-    dest: "{{app_dir}}"
+    dest: "{{app_dir}}/{{file_name}}"
     owner: "{{ansible_user}}"
     group: "{{ansible_user}}"
     state: link
